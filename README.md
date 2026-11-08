@@ -84,3 +84,7 @@ Não inclua dados pessoais reais nos exemplos ou no repositório público.
 Os testes manuais no navegador confirmaram o cadastro e a mensagem de sucesso, a listagem, a persistência após atualizar a página e a atualização das vagas. Também passaram o bloqueio de placa duplicada, a validação de campo vazio e placa inválida, o cancelamento da remoção e a liberação da vaga após confirmar a remoção.
 
 Os testes isolados do modelo também verificaram os limites de vagas, a lotação e o tratamento de falhas de armazenamento. A sintaxe dos quatro arquivos JavaScript foi verificada.
+
+## Apoio no desenvolvimento
+
+Usei o ChatGPT (OpenAI) como apoio na implementação do sistema e na conferência final do código. Realizei os testes manuais no navegador para verificar o funcionamento da aplicação.
