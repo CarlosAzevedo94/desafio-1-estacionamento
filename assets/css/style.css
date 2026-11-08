@@ -1,0 +1,95 @@
+/* 1. Cores e tipografia compartilhadas pelas três páginas. */
+:root {
+  --fundo: #f4f7fa;
+  --superficie: #ffffff;
+  --texto: #1c3040;
+  --texto-suave: #536879;
+  --primaria: #155775;
+  --primaria-hover: #103f56;
+  --borda: #cbd7e0;
+  --livre-fundo: #edf8f2;
+  --livre-texto: #215c42;
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: var(--texto);
+  background: var(--fundo);
+  line-height: 1.6;
+}
+
+/* Inclui bordas e espaçamento interno no tamanho de cada elemento. */
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; display: flex; flex-direction: column; }
+a { color: var(--primaria); text-underline-offset: .2em; }
+
+/* 2. Cabeçalho e navegação: a página atual recebe destaque. */
+.cabecalho {
+  padding: 1.5rem max(1rem, calc((100% - 1052px) / 2));
+  background: #12364b;
+  color: white;
+  border-bottom: 4px solid #69c7b0;
+}
+.marca { margin: 0 0 1rem; font-size: 1.3rem; font-weight: 700; letter-spacing: -.02em; }
+nav { display: flex; flex-wrap: wrap; gap: .5rem; }
+nav a { padding: .65rem 1rem; border-radius: .4rem; color: #e5eff5; text-decoration: none; }
+nav a:hover { background: #204e66; }
+nav a[aria-current="page"] { background: #e4f6f0; color: #174c3e; font-weight: 700; }
+
+/* 3. Área principal com largura limitada e margens automáticas. */
+main { width: 100%; max-width: 1100px; margin: 0 auto; padding: 2.5rem 1.5rem 3rem; flex: 1; }
+h1 { margin: 0; font-size: clamp(1.75rem, 4vw, 2.3rem); line-height: 1.25; letter-spacing: -.035em; }
+main > p { color: var(--texto-suave); }
+.aviso { margin: 1.5rem 0; padding: 1rem 1.25rem; background: #e8f0f6; border-left: 4px solid #4a7b9b; border-radius: 0 .4rem .4rem 0; font-size: .95rem; }
+form, .tabela-container { margin-top: 1.5rem; padding: 1.75rem; border: 1px solid var(--borda); border-radius: .75rem; background: var(--superficie); box-shadow: 0 4px 16px #12364b08; }
+form > p { margin-top: 0; margin-bottom: 1.5rem; color: var(--texto-suave); font-size: .9rem; }
+
+/* 4. Formulário: duas colunas no computador e rótulos acima dos campos. */
+.campos { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem 1.5rem; }
+.campos > div { min-width: 0; }
+label { display: block; margin-bottom: .4rem; font-size: .95rem; font-weight: 600; }
+input, select { width: 100%; min-height: 48px; padding: .75rem; border: 1px solid #839aaa; border-radius: .4rem; background: white; color: var(--texto); font: inherit; }
+input::placeholder { color: #607485; opacity: 1; }
+input:hover, select:hover { border-color: var(--primaria); }
+input:focus, select:focus { border-color: var(--primaria); }
+#placa { text-transform: uppercase; }
+.acoes { display: flex; flex-wrap: wrap; align-items: center; gap: .85rem; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--borda); }
+
+/* 5. Botões: estados normal, hover, foco e desabilitado. */
+button, .botao { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: .7rem 1.2rem; border: 1px solid var(--primaria); border-radius: .4rem; background: var(--primaria); color: white; font: inherit; font-weight: 600; text-decoration: none; cursor: pointer; }
+button:enabled:hover, .botao:hover { background: var(--primaria-hover); }
+button:disabled { background: #e3e9ee; border-color: #c2ced7; color: #516575; cursor: not-allowed; }
+.secundario { background: white; color: var(--primaria); }
+button.secundario:hover { background: #edf4f8; }
+:focus-visible { outline: 3px solid #bc5900; outline-offset: 3px; }
+nav a:focus-visible { outline-color: #ffcf8a; }
+
+/* 6. Tabela com rolagem dentro do painel em telas pequenas. */
+.tabela-container { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: .95rem; }
+caption { margin-bottom: 1rem; text-align: left; font-size: 1.1rem; font-weight: 700; }
+th, td { padding: 1rem .85rem; text-align: left; border-bottom: 1px solid var(--borda); }
+th { background: #eef3f7; font-size: .85rem; white-space: nowrap; }
+td { overflow-wrap: anywhere; }
+td[colspan] { padding: 2.5rem 1rem; text-align: center; color: var(--texto-suave); }
+
+/* 7. Vagas: o Grid distribui os cartões conforme o espaço disponível. */
+.vagas { display: grid; grid-template-columns: repeat(auto-fit, minmax(145px, 1fr)); gap: 1rem; margin: 1.5rem 0 0; padding: 0; list-style: none; }
+.vagas li { padding: 1.25rem; border: 1px solid #a7cdb9; border-top: 4px solid #39865f; border-radius: .6rem; background: var(--livre-fundo); color: var(--livre-texto); }
+.vagas strong { display: block; margin-bottom: .5rem; font-size: 1.15rem; }
+.vagas span { display: block; font-size: .9rem; }
+footer { padding: 1.5rem 1rem; border-top: 1px solid var(--borda); text-align: center; color: var(--texto-suave); font-size: .85rem; }
+
+/* 8. Responsividade: adapta o formulário e os botões ao celular. */
+@media (max-width: 600px) {
+  main { padding: 1.75rem 1rem 2rem; }
+  .campos { grid-template-columns: 1fr; }
+  form, .tabela-container { padding: 1.1rem; }
+  .acoes { align-items: stretch; flex-direction: column; }
+  .acoes > a { padding: .5rem 0; text-align: center; }
+  .vagas { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem; }
+  .vagas li { padding: 1rem .75rem; }
+}
+
+/* Estados apresentados após a integração com o JavaScript. */
+.vagas li.ocupada { background: #fff1eb; border-color: #d5b2a1; border-top-color: #a24d27; color: #79381e; }
+.aviso.erro { background: #fff1ed; border-left-color: #a23d26; color: #79301f; }
+button.remover { min-height: 44px; padding: .5rem .8rem; background: white; border-color: #a23d26; color: #91371f; }
+button.remover:hover { background: #fff1ed; }

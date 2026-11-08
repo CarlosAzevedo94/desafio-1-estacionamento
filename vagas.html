@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vagas disponíveis | Controle de estacionamento</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="js/models/estacionamento-model.js" defer></script>
+  <script src="js/views/estacionamento-view.js" defer></script>
+  <script src="js/controllers/estacionamento-controller.js" defer></script>
+</head>
+<body>
+  <noscript><p class="aviso erro">Ative o JavaScript para cadastrar e consultar as reservas.</p></noscript>
+  <header class="cabecalho">
+    <p class="marca">Controle de estacionamento</p>
+    <nav aria-label="Menu principal">
+      <a href="index.html">Reservas</a>
+      <a href="cadastro.html">Nova reserva</a>
+      <a href="vagas.html" aria-current="page">Vagas disponíveis</a>
+    </nav>
+  </header>
+  <main id="conteudo">
+    <h1>Vagas disponíveis</h1>
+    <p>O condomínio possui 20 vagas, numeradas de 1 a 20.</p>
+    <p id="mensagem" class="aviso" role="status" aria-live="polite">Carregando os dados do estacionamento...</p>
+    <ul id="lista-vagas" class="vagas" aria-label="Situação das vagas"></ul>
+  </main>
+  <footer>Desafio 1 · Desenvolvimento Web · HTML, CSS e JavaScript</footer>
+</body>
+</html>
+

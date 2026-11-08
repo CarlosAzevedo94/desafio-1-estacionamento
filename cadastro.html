@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nova reserva | Controle de estacionamento</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="js/models/estacionamento-model.js" defer></script>
+  <script src="js/views/estacionamento-view.js" defer></script>
+  <script src="js/controllers/estacionamento-controller.js" defer></script>
+</head>
+<body>
+  <noscript><p class="aviso erro">Ative o JavaScript para cadastrar e consultar as reservas.</p></noscript>
+  <header class="cabecalho">
+    <p class="marca">Controle de estacionamento</p>
+    <nav aria-label="Menu principal">
+      <a href="index.html">Reservas</a>
+      <a href="cadastro.html" aria-current="page">Nova reserva</a>
+      <a href="vagas.html">Vagas disponíveis</a>
+    </nav>
+  </header>
+  <main id="conteudo">
+    <h1>Nova reserva</h1>
+    <p>Preencha os dados do proprietário e do veículo.</p>
+    <p id="mensagem" class="aviso" role="status" aria-live="polite">Carregando os dados do estacionamento...</p>
+    <form id="form-reserva" aria-describedby="mensagem">
+      <p>Todos os campos são obrigatórios.</p>
+      <div class="campos">
+        <div>
+          <label for="placa">Placa do veículo</label>
+          <input id="placa" name="placa" type="text" placeholder="ABC1D23 ou ABC-1234" maxlength="8" required>
+        </div>
+        <div>
+          <label for="proprietario">Nome do proprietário</label>
+          <input id="proprietario" name="proprietario" type="text" autocomplete="name" required>
+        </div>
+        <div>
+          <label for="apartamento">Número do apartamento</label>
+          <input id="apartamento" name="apartamento" type="text" inputmode="numeric" required>
+        </div>
+        <div>
+          <label for="bloco">Bloco do apartamento</label>
+          <input id="bloco" name="bloco" type="text" required>
+        </div>
+        <div>
+          <label for="modelo">Modelo do veículo</label>
+          <input id="modelo" name="modelo" type="text" placeholder="Ex.: Onix" required>
+        </div>
+        <div>
+          <label for="cor">Cor do veículo</label>
+          <input id="cor" name="cor" type="text" placeholder="Ex.: Prata" required>
+        </div>
+        <div>
+          <label for="vaga">Número da vaga</label>
+          <select id="vaga" name="vaga" required>
+            <option value="">Selecione uma vaga</option>
+            <option value="1">Vaga 1</option>
+            <option value="2">Vaga 2</option>
+            <option value="3">Vaga 3</option>
+            <option value="4">Vaga 4</option>
+            <option value="5">Vaga 5</option>
+            <option value="6">Vaga 6</option>
+            <option value="7">Vaga 7</option>
+            <option value="8">Vaga 8</option>
+            <option value="9">Vaga 9</option>
+            <option value="10">Vaga 10</option>
+            <option value="11">Vaga 11</option>
+            <option value="12">Vaga 12</option>
+            <option value="13">Vaga 13</option>
+            <option value="14">Vaga 14</option>
+            <option value="15">Vaga 15</option>
+            <option value="16">Vaga 16</option>
+            <option value="17">Vaga 17</option>
+            <option value="18">Vaga 18</option>
+            <option value="19">Vaga 19</option>
+            <option value="20">Vaga 20</option>
+          </select>
+        </div>
+      </div>
+      <div class="acoes">
+        <button type="submit" disabled>Salvar reserva</button>
+        <button class="secundario" type="reset">Limpar campos</button>
+        <a href="index.html">Voltar às reservas</a>
+      </div>
+    </form>
+  </main>
+  <footer>Desafio 1 · Desenvolvimento Web · HTML, CSS e JavaScript</footer>
+</body>
+</html>
+

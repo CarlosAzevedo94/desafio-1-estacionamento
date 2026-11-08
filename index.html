@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reservas | Controle de estacionamento</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="js/models/estacionamento-model.js" defer></script>
+  <script src="js/views/estacionamento-view.js" defer></script>
+  <script src="js/controllers/estacionamento-controller.js" defer></script>
+</head>
+<body>
+  <noscript><p class="aviso erro">Ative o JavaScript para cadastrar e consultar as reservas.</p></noscript>
+  <header class="cabecalho">
+    <p class="marca">Controle de estacionamento</p>
+    <nav aria-label="Menu principal">
+      <a href="index.html" aria-current="page">Reservas</a>
+      <a href="cadastro.html">Nova reserva</a>
+      <a href="vagas.html">Vagas disponíveis</a>
+    </nav>
+  </header>
+  <main id="conteudo">
+    <h1>Reservas cadastradas</h1>
+    <p>Consulte as reservas das 20 vagas do condomínio.</p>
+    <p id="mensagem" class="aviso" role="status" aria-live="polite">Carregando os dados do estacionamento...</p>
+    <a class="botao" href="cadastro.html">Nova reserva</a>
+    <div class="tabela-container" role="region" aria-label="Reservas cadastradas" tabindex="0">
+      <table>
+        <caption>Reservas de vagas</caption>
+        <thead>
+          <tr>
+            <th scope="col">Vaga</th>
+            <th scope="col">Placa</th>
+            <th scope="col">Proprietário</th>
+            <th scope="col">Apartamento</th>
+            <th scope="col">Bloco</th>
+            <th scope="col">Modelo</th>
+            <th scope="col">Cor</th>
+            <th scope="col">Ações</th>
+          </tr>
+        </thead>
+        <tbody id="lista-reservas">
+          <tr><td colspan="8">Carregando reservas...</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+  <footer>Desafio 1 · Desenvolvimento Web · HTML, CSS e JavaScript</footer>
+</body>
+</html>
+
